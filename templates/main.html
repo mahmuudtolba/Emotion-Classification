@@ -15,17 +15,12 @@
             <input type="submit" value="Submit">
         </form>
         <div class="predictions">
-            <!-- {{prediction_emotions}} -->
             <h3>{{my_string}}</h3>
             {% for item in prediction_emotions %}
             <div class="item">
                 <div class="">
-                    <h4>label is </h4>
-                    <p>👉 {{item.label}}</p>
-                </div>
-                <div class="">
-                    <h4> Score is </h4>
-                    <p>👉 {{item.score}}</p>
+                    <h4>{{item.label}}   </h4>
+                    <p> with a probablity of {{item.score}} %</p>
                 </div>
             </div>
             {% endfor %}

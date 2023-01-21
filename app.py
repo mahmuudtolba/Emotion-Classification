@@ -12,9 +12,6 @@ def query(payload):
 	response = requests.post(API_URL, headers=headers, json=payload)
 	return response.json()
 	
-output = query({
-	"inputs": "I like you. I love you",
-})
 
 
 @app.route('/')
@@ -30,9 +27,9 @@ def predict():
 	"inputs": data,
         })
     # print(type(output[0]),output[0])
-    # for i in output[0]:
-    #     print(i)
-    print(data,output)
+    for i in range(len(output[0])):
+        output[0][i]['score'] = format(output[0][i]['score'] , '0.2f')
+        
     if output[0]:
         return render_template("main.html", my_string="you emotions are ",prediction_emotions =output[0])
     else:
