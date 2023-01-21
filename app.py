@@ -29,7 +29,7 @@ def predict():
     output = query({
 	"inputs": data,
         })
-    return render_template("main.html",prediction_emotions="you emotions are {}".format(output))
+    return render_template("main.html",prediction_emotions="you emotions are {}".format(output[0]))
 
 if __name__ =='__main__':
     app.run(debug=True)
