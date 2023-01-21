@@ -1,20 +1,36 @@
 <!doctype html>
 <html>
-    <head>
-		<link rel="stylesheet" type="text/css" href="statics/style.css">
-        <title>Emotion Classification</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <div class="container">
-            <h1>Emotion Classification</h1>
-            <form action="{{ url_for('predict')}}"method="post">
-                <input type="text" name="user_input" placeholder="Enter what you are thinking here">
-                <input type="submit" value="Submit">
-            </form>
-            <div class="predictions">
-                {{prediction_emotions}}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="statics/style.css">
+    <title>Emotion Classification</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Emotion Classification</h1>
+        <form action="{{ url_for('predict')}}" method="post">
+            <input required type="text" name="user_input" placeholder="Enter what you are thinking here">
+            <input type="submit" value="Submit">
+        </form>
+        <div class="predictions">
+            <!-- {{prediction_emotions}} -->
+            <h3>{{my_string}}</h3>
+            {% for item in prediction_emotions %}
+            <div class="item">
+                <div class="">
+                    <h4>label is </h4>
+                    <p>👉 {{item.label}}</p>
+                </div>
+                <div class="">
+                    <h4> Score is </h4>
+                    <p>👉 {{item.score}}</p>
+                </div>
             </div>
+            {% endfor %}
         </div>
-    </body>
+    </div>
+</body>
+
 </html>

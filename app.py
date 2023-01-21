@@ -29,7 +29,14 @@ def predict():
     output = query({
 	"inputs": data,
         })
-    return render_template("main.html",prediction_emotions="you emotions are {}".format(output[0]))
-
+    # print(type(output[0]),output[0])
+    # for i in output[0]:
+    #     print(i)
+    print(data,output)
+    if output[0]:
+        return render_template("main.html", my_string="you emotions are ",prediction_emotions =output[0])
+    else:
+        return render_template("main.html", my_string="you emotions are ",prediction_emotions =output)
+# prediction_emotions="you emotions are {}".format(output)
 if __name__ =='__main__':
     app.run(debug=True)
