@@ -2,7 +2,7 @@ import requests
 from flask import Flask , request , app , jsonify , url_for , render_template 
 
 
-app = Flask(__name__)
+app = Flask(__name__ , template_folder = 'templates' , static_folder='statics')
 ## Load the model
 
 API_URL = "https://api-inference.huggingface.co/models/mahmoudNG/distilbert-base-uncased-finetuned-emotion"

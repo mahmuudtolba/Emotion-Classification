@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="statics/style.css">
         <title>Emotion Classification</title>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -9,7 +9,7 @@
         <div class="container">
             <h1>Emotion Classification</h1>
             <form action="{{ url_for('predict')}}"method="post">
-                <input type="text" name="user_input" placeholder="Enter your text here">
+                <input type="text" name="user_input" placeholder="Enter what you are thinking here">
                 <input type="submit" value="Submit">
             </form>
             <div class="predictions">
