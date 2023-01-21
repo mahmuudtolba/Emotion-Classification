@@ -29,11 +29,11 @@ def predict():
     # print(type(output[0]),output[0])
     for i in range(len(output[0])):
         output[0][i]['score'] = format(output[0][i]['score'] , '0.2f')
-        
+
     if output[0]:
-        return render_template("main.html", my_string="you emotions are ",prediction_emotions =output[0])
+        return render_template("main.html", my_string="you are ",prediction_emotions =output[0])
     else:
-        return render_template("main.html", my_string="you emotions are ",prediction_emotions =output)
+        return render_template("main.html", my_string="you are ",prediction_emotions =output)
 # prediction_emotions="you emotions are {}".format(output)
 if __name__ =='__main__':
     app.run(debug=True)
